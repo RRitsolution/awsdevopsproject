@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  # --- Frontend Service ---
+  frontend:
+    # Build the image using the Dockerfile in the './frontend' directory
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    # Map port 8080 on your local machine to port 80 in the container
+    ports:
+      - "8080:80"
+
+  # --- Backend Service ---
+  backend:
+    # Build the image using the Dockerfile in the './backend' directory
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    # Map port 5000 on your local machine to port 5000 in the container
+    ports:
+      - "5000:5000"
+    # Mount the local backend folder into the container for easy code changes
+    volumes:
+      - ./backend:/app
+    # Ensure the database service is running before starting the backend
+    depends_on:
+      - db
+
+  # --- Database Service ---
+  db:
+    # Use the official MySQL 8.0 image from Docker Hub
+    image: mysql:8.0
+    container_name: mysql_db
+    # Set environment variables for the database configuration
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: peopledb
+    ports:
+      - "3306:3306"
+    # Use a named volume to persist database data across container restarts
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+# Define the named volume
+volumes:
+  mysql-data:
