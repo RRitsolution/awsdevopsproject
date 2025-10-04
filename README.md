@@ -1,6 +1,19 @@
+##AWS Devops Project##
+
+Please find all the steps to be performed on AWS console.
+
+Note-
+1-I used SCM as a GitHub repository,  not CodeCommit.
+2- Need to create an S3 bucket to store the Build Artifact 
+3- Also need to create 2 service role, 1 for attaching EC2 and 1 for CodeDeploy (please refer to snips) in advance 
+
+Steps to be followed .
+
+1- Create github repository and place the code (refer my repo) ==> then launch the service code build and integrate github repository with the code build, also S3(refer steps in snips ) ==> then launch EC2 Instance and attach the policy(refer to snip) and install Agent and restart agent service ==> then launch code deploy and attach the policy (refer snips for steps and policies )==> then launch code pipeline(refer snips as well).
 
 
-Please find below the snips for the launch service code build .
+
+I've included for you below the snips for the launch service code build.
 
 <img width="429" height="167" alt="image" src="https://github.com/user-attachments/assets/62cf3405-1b46-4d22-8987-b6eef5cc9875" />
 <img width="472" height="422" alt="image" src="https://github.com/user-attachments/assets/5e1c0c57-1954-4c60-84fd-af497e71acdd" />
@@ -11,7 +24,25 @@ Please find below the snips for the launch service code build .
 
 
 
+Please find the snips to attach service role to attach ec2 
+
+<img width="910" height="265" alt="image" src="https://github.com/user-attachments/assets/e426e849-a71e-4c63-85f0-b0749702814c" />
+<img width="484" height="730" alt="image" src="https://github.com/user-attachments/assets/d62295e3-eb4f-4eba-a75a-f41697db9e2a" />
+
+##Agent installation commands and restart on EC2 ##
+
+sudo apt install ruby-full
+sudo apt install wget
+wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
+chmod +x ./install
+sudo ./install auto
+=sudo systemctl restart codedeploy-agent
+systemctl status codedeploy-agent
+
+
+
 Please find below the snips for the launch service code deploy .
+
 <img width="720" height="153" alt="image" src="https://github.com/user-attachments/assets/8497557a-5df9-4c7f-b874-73beef9daf0c" />
 <img width="488" height="314" alt="image" src="https://github.com/user-attachments/assets/a79a5e33-5463-4350-b67f-80d5aba384cf" />
 <img width="1462" height="676" alt="image" src="https://github.com/user-attachments/assets/3da8c521-30ec-4451-86db-6a5d285e54c7" />
@@ -21,6 +52,7 @@ Please find below the snips for the launch service code deploy .
 
 
 Please find below the snips for the launch service code pipeline.
+
 <img width="885" height="125" alt="image" src="https://github.com/user-attachments/assets/fa2b00e3-09df-402e-9afd-ca6da37ee333" />
 <img width="329" height="124" alt="image" src="https://github.com/user-attachments/assets/db71c4da-9808-4b3c-b291-718d85af5bd0" />
 <img width="621" height="577" alt="image" src="https://github.com/user-attachments/assets/bff16cef-b6d8-414d-9cbc-6e79d63f6323" />
@@ -31,9 +63,6 @@ Please find below the snips for the launch service code pipeline.
 
 
 
-Please find the snips to attach service role to attach ec2 
-<img width="910" height="265" alt="image" src="https://github.com/user-attachments/assets/e426e849-a71e-4c63-85f0-b0749702814c" />
-<img width="484" height="730" alt="image" src="https://github.com/user-attachments/assets/d62295e3-eb4f-4eba-a75a-f41697db9e2a" />
 
 
 
@@ -41,6 +70,16 @@ Please find the snips to attach service role to attach ec2
 Finally, the AWS code pipeline successfully executed.
 
 <img width="551" height="212" alt="image" src="https://github.com/user-attachments/assets/49c63818-a0e9-466b-aa91-fe8f988ad0c8" />
+
+
+
+
+Note - Please refer roles along with the policies.
+
+<img width="224" height="403" alt="image" src="https://github.com/user-attachments/assets/f0f06a46-63ee-4da1-b487-1c14d5f097d5" /> for code deploy
+<img width="214" height="365" alt="image" src="https://github.com/user-attachments/assets/345e7948-fbed-4119-839f-7b055b4153f4" /> for EC2
+
+
 
 
 
