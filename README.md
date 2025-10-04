@@ -1,5 +1,7 @@
 
 
+Please find below the snips for the launch service code build .
+
 <img width="429" height="167" alt="image" src="https://github.com/user-attachments/assets/62cf3405-1b46-4d22-8987-b6eef5cc9875" />
 <img width="472" height="422" alt="image" src="https://github.com/user-attachments/assets/5e1c0c57-1954-4c60-84fd-af497e71acdd" />
 <img width="473" height="427" alt="image" src="https://github.com/user-attachments/assets/b12dfa81-e1e5-4a43-87e1-40f59ef92127" />
@@ -9,7 +11,7 @@
 
 
 
-
+Please find below the snips for the launch service code deploy .
 <img width="720" height="153" alt="image" src="https://github.com/user-attachments/assets/8497557a-5df9-4c7f-b874-73beef9daf0c" />
 <img width="488" height="314" alt="image" src="https://github.com/user-attachments/assets/a79a5e33-5463-4350-b67f-80d5aba384cf" />
 <img width="1462" height="676" alt="image" src="https://github.com/user-attachments/assets/3da8c521-30ec-4451-86db-6a5d285e54c7" />
@@ -18,7 +20,7 @@
 
 
 
-
+Please find below the snips for the launch service code pipeline.
 <img width="885" height="125" alt="image" src="https://github.com/user-attachments/assets/fa2b00e3-09df-402e-9afd-ca6da37ee333" />
 <img width="329" height="124" alt="image" src="https://github.com/user-attachments/assets/db71c4da-9808-4b3c-b291-718d85af5bd0" />
 <img width="621" height="577" alt="image" src="https://github.com/user-attachments/assets/bff16cef-b6d8-414d-9cbc-6e79d63f6323" />
@@ -29,9 +31,16 @@
 
 
 
-
+Please find the snips to attach service role to attach ec2 
 <img width="910" height="265" alt="image" src="https://github.com/user-attachments/assets/e426e849-a71e-4c63-85f0-b0749702814c" />
 <img width="484" height="730" alt="image" src="https://github.com/user-attachments/assets/d62295e3-eb4f-4eba-a75a-f41697db9e2a" />
+
+
+
+
+Finally, the AWS code pipeline successfully executed.
+
+<img width="551" height="212" alt="image" src="https://github.com/user-attachments/assets/49c63818-a0e9-466b-aa91-fe8f988ad0c8" />
 
 
 
